@@ -1,0 +1,63 @@
+% Please copy and add to local repository
+% Each project should have its own local configuration files
+% Delete first three lines after adding it 
+
+
+% What pre-processor (bibtex vs biber) and packages (natbib and biblatex) are we using?  
+
+\RequirePackage{etoolbox}
+
+\newtoggle{bibtex_natbib}
+\settoggle{bibtex_natbib}{true}
+%\settoggle{bibtex_natbib}{false}
+
+% USE \iftoggle{bibtex_natbib}{do if we are using biblatex with natbib}{do if using something else} 
+
+\newtoggle{biber_biblatex}
+%\settoggle{biber_biblatex}{true}
+\settoggle{biber_biblatex}{false}
+
+
+% USE \iftoggle{biber_biblatex}{do if name is true}{do if name is false}
+
+
+%Pleae not that it's always recomendable to keep natbib compatibility  
+
+
+% THIS FORCES USERS TO CHOSE AMONG bibtex_natbib or biber_biblatex
+
+\iftoggle{bibtex_natbib}{
+  \typeout{On bibtex_natbib mode for bibliographies}
+}{} 
+
+
+\iftoggle{biber_biblatex}{
+  \typeout{On biber_biblatex mode for bibliographies}
+}{} 
+
+
+%%% NOT BOTH
+\iftoggle{bibtex_natbib}{
+  \iftoggle{biber_biblatex}{
+    \typeout{ERROR: Chose among packages and pre-processors of bibliographies}
+    \typeout{Either bibtex_natbib or biber_biblatex}
+    \stop}{} 
+}{} 
+
+
+%%% NOT NONE 
+
+\iftoggle{bibtex_natbib}{
+}{ \iftoggle{biber_biblatex}{}
+  {
+    \typeout{ERROR: Chose one package and pre-processor of bibliographies}
+    \typeout{Either bibtex_natbib or biber_biblatex}
+    \stop
+  }
+} 
+
+
+
+
+
+

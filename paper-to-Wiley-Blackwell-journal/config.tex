@@ -1,0 +1,83 @@
+\RequirePackage{etoolbox}
+
+% #################### Conditional formatting ############################
+
+% Most conditional text formatting is implemented using Boolean Expressions provided by the etoolbox package 
+% See ftp://ftp.funet.fi/pub/TeX/CTAN/macros/latex/contrib/etoolbox/etoolbox.pdf for examples 
+% See small example 1 at http://tex.stackexchange.com/questions/5894/latex-conditional-expression 
+% See small example 2 at http://notesofaprogrammer.blogspot.fi/2014/10/conditional-processing-of-latex.html  
+
+
+% Shall the boxes arround submited content be displayed? 
+% Such boxes are invoked in the document with the 'submitedtext' enviroment and the 'SubmittedNote' command 
+
+
+\newtoggle{boxSubmittedContent}
+
+
+%\toggletrue{boxSubmittedContent}
+\togglefalse{boxSubmittedContent} 
+ 
+
+
+
+% Is this the draft or the final version 
+
+\newtoggle{draftVersion}
+
+
+
+% Uncomment for draft mode 
+%\toggletrue{draftVersion}
+
+% Uncomment for final version 
+\togglefalse{draftVersion}
+
+
+\newtoggle{IS-Audience}
+
+
+% Uncomment IS Audience 
+\toggletrue{IS-Audience}
+%\togglefalse{IS-Audience}
+
+
+
+
+\newtoggle{SeCo-Audience}
+
+
+
+% Uncomment for draft mode 
+%\toggletrue{SeCo-Audience}
+\togglefalse{SeCo-Audience}
+
+
+\newtoggle{shortVersion}
+\toggletrue{shortVersion}
+%\togglefalse{shortVersion}
+
+% Uncomment for final version 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%   Should Figures and tables  be places on site? Or in the end of the document?  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% bolean conditional that sets tables and figures on site vs vs on document  
+\newtoggle{TaFigOnEnd}
+
+
+%\toggletrue{TaFigOnEnd}
+\togglefalse{TaFigOnEnd}
+
+% Uncommend if figures and tables should be on end 
+%\TaFigOnEndtrue
+
+% Uncommend if figures and tables should be on end 
+%\TaFigOnEndfalse 
+
+
+

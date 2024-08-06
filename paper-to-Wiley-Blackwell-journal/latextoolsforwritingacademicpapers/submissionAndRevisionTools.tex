@@ -1,0 +1,98 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%  For noting of which, where and when content was submitted / published %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Author Jose Teixeira <japolinario@gmail.com> 20 Oct 2016 
+
+%\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{marginnote}
+\usepackage{framed}
+\usepackage{float}
+
+
+
+
+
+% Make nice boxes 
+%# 2 is color 
+%# 3 is title  
+\newtcolorbox[]{subAndRevbox}[3][]
+{
+  colframe = #2,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  fonttitle=\bfseries\color{Brown},
+  title    = \footnotesize  #3,
+  #1,
+}
+
+
+
+
+%%%%%%%%% FIGURES  %%%%%%%%%%%%%%%%%%%
+
+
+
+% Add a boxed note to  highlight that the Figure was submitted somewhere.
+% Argument Journal and/or Date submitted 
+\newenvironment{submittedFigure}[1][Submitted somewhere]
+    {  % Before the figure 
+      \iftoggle{boxSubmittedContent}{%
+      \centering 
+      % boxes showing were it was submited     
+      \begin{minipage}{1.0\textwidth}
+      %\begin{framed}\raggedleft%\centering -> error not in par mode errot       
+      \begin{subAndRevbox}{Melon}{ \centering Figure as submitted to #1}
+      }
+      {% Otherwise there is nothing to highlight 
+      }
+
+  }
+  {  % After the figure 
+  
+       \iftoggle{boxSubmittedContent}{%
+       % boxes arround the submitted figure are to be displayed
+     
+      \end{subAndRevbox} %error 
+      % \end{framed} error 
+      \end{minipage}
+       
+      }
+      {% Otherwise there is nothing to highlight 
+      }
+}
+
+%%%%%%%%% Tables %%%%%%%%%%%%%%%%%%%
+
+
+
+% Add a boxed note to  highlight that a table was submitted somewhere.
+% Argument can be the Journal and/or Date submitted  where the table was submited
+\newenvironment{submittedTable}[1][Submitted somewhere]
+    {  % Before the figure 
+      \iftoggle{boxSubmittedContent}{%
+      \centering 
+      % boxes showing were it was submited     
+      \begin{minipage}{1.0\textwidth}
+      %\begin{framed}\raggedleft%\centering -> error not in par mode errot       
+      \begin{subAndRevbox}{Melon}{ \centering Table as submitted to #1}
+      }
+      {% Otherwise there is nothing to highlight 
+      }
+
+  }
+  {  % After the figure 
+  
+       \iftoggle{boxSubmittedContent}{%
+       % boxes arround the submitted figure are to be displayed
+     
+      \end{subAndRevbox} %error 
+      % \end{framed} error 
+      \end{minipage}
+       
+      }
+      {% Otherwise there is nothing to highlight 
+      }
+}

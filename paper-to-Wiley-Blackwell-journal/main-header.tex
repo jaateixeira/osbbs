@@ -1,0 +1,237 @@
+%\usepackage[hidelinks]{hyperref}
+
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+
+\usepackage{acronym}
+
+% Capitalization of titles
+%\usepackage{stringstrings}
+%\usepackage{mfirstuc}
+\usepackage{mfirstuc-english}
+
+
+\input{./latextoolsforwritingacademicpapers/submissionAndRevisionTools.tex}
+\input{./latextoolsforwritingacademicpapers/reviewAndCommentTools.tex}
+
+
+% \usepackage[style=apa,backend=biber,natbib=true]{biblatex}
+%\usepackage[notes,backend=biber,natbib=true]{biblatex-chicago}
+
+
+
+\input{bibliographies.config.tex}
+
+% NOT IN BIBLATEX MODE 4 WILEY
+%\addbibresource{references.bib}
+% % Reference bib-tex files here
+%\addbibresource{curated-references/alliances.bib}
+%\addbibresource{curated-references/business-ecosystems.bib}
+%\addbibresource{curated-references/competitive-dynamics.bib}
+%\addbibresource{curated-references/coopetition.bib}
+%\addbibresource{curated-references/coopetition-sna.bib}
+%\addbibresource{curated-references/floss.bib}
+%\addbibresource{curated-references/floss-coordination.bib}
+%\addbibresource{curated-references/floss-gender.bib}
+%\addbibresource{curated-references/floss-motivations.bib}
+%\addbibresource{curated-references/floss-sna.bib}
+%\addbibresource{curated-references/is-methods.bib}
+%\addbibresource{curated-references/JoseTeixeiraPub.bib}
+%\addbibresource{curated-references/mix-methods.bib}
+%\addbibresource{curated-references/msr.bib}
+%\addbibresource{curated-references/network-analysis.bib}
+%\addbibresource{curated-references/network-analysis-extra.bib}
+%\addbibresource{curated-references/network-science.bib}
+%\addbibresource{curated-references/network-theory.bib}
+%\addbibresource{curated-references/opencoopetition.bib}
+%\addbibresource{curated-references/open-innovation.bib}
+%\addbibresource{curated-references/openness.bib}
+%\addbibresource{curated-references/productinnovation.bib}
+%\addbibresource{curated-references/qualitative-methods.bib}
+%\addbibresource{curated-references/sna.bib}
+%\addbibresource{curated-references/sna-measures.bib}
+%\addbibresource{curated-references/sna-multi-l.bib}
+%\addbibresource{curated-references/sna-visualization.bib}
+%\addbibresource{curated-references/soft-eng.bib}
+%\addbibresource{curated-references/software-ecosystems.bib}
+%\addbibresource{curated-references/software-ecosystems-extra.bib}
+%\addbibresource{curated-references/strategy.bib}
+%\addbibresource{curated-references/theory-building.bib}
+%\addbibresource{curated-references/visualization.bib}
+%\addbibresource{curated-references/qualitative-methods.bib}
+
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/digitalization.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/digital-literacy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/info-literacy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/info-eval.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/workplace-info-literacy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/JoseTeixeiraPub.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/practice.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/qualitative-methods.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/sna.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/sourcing.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/stigmergy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/strategy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/theory-building.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/visualization.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/fitness-exercise.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/sports-science.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/physical-therapy.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/info-behaviour.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/lis-methods.bib}}
+% \addbibresource{bibliographicreferencesforwritingacademicpapers/online.bib}}
+% %\addbibresource{references.bib}}
+% 
+
+
+
+
+
+% Based on https://tex.stackexchange.com/questions/435630/what-is-the-simplest-most-canonical-way-to-change-the-background-color-of-quote
+
+%\usepackage[most]{tcolorbox}
+
+
+\definecolor{linequote}{RGB}{224,215,188}
+\definecolor{backquote}{RGB}{249,245,233}
+
+
+
+
+\newtcolorbox{myquote}{
+colback=red!5!white,
+colframe=blue!75!black,
+%enhanced,
+%breakable,
+%size=minimal,
+%frame hidden,
+%boxrule=0pt,
+%sharp corners,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[babel=true]{csquotes}
+
+%\usepackage[english]{babel}
+%\usepackage{csquotes}
+% \usepackage[style=apa,backend=biber,]{biblatex}
+ %\usepackage[style=lncs,backend=biber,sorting=none]{biblatex}
+ 
+% To preserve capitalization 
+%\DeclareFieldFormat{apacase}{#1}
+
+% hyry: inline lists
+%\usepackage[inline]{enumitem} 
+
+% hyry: optimizes the spaces between letters
+%\usepackage{microtype} 
+
+
+%\input{ecil.template.config.tex}
+                
+% For the support of entrance epigraphs 
+%\usepackage{epigraph}
+
+
+% For the support of collorfull graphics 
+%\usepackage{graphicx}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage[]{float}
+
+% Hyperef should be loaded before cleveref
+
+%\usepackage[hidelinks,implicit=false]{hyperref}
+%\usepackage[implicit=false,colorlinks=true]{hyperref}
+%\usepackage[]{hyperref}
+
+% For smarter references   
+% \cref{...} instead of figure~\ref{...}
+% To capitalize your references, use \Cref{...} instead of \cref{...}
+% For multiple references \cref{fig1,eq3,tb1}),
+% Labels should always come after the caption
+\usepackage{cleveref}
+
+
+% This was breaking latex compilation. Really needed?  
+% An error in the settings; does it now work? (basically, it does not do much, can be removed if doesn't work)
+
+% To resize table
+\usepackage{adjustbox}
+
+% Enable simple arithmetic in LaTeX commands
+%\usepackage{calc}
+
+% for repeated footnotes 
+%\usepackage{footmisc}
+
+
+% For nice tables 
+\usepackage{tabularx} 
+
+% for nice rules 
+\usepackage{booktabs}
+
+%\usepackage{array}
+
+% For table notes 
+%\usepackage[flushleft]{threeparttable}
+
+\usepackage{makecell}
+
+% to typeset URLs, URIs, and DOIs
+%\usepackage{url}
+%\def\UrlFont{\rmfamily}
+
+
+% To make theorems as theoretical propositions 
+% \newtheorem{theoreticalproposition}[theorem]{Theoretical Proposition}
+
+
+%For setting theoreticalproposition
+% \usepackage{theorem}
+% \newcounter{theorem}
+  
+% To make theorems as theoretical propositions 
+\newtheorem{theoreticalproposition}[theorem]{Theoretical Proposition}
+
+
+
+
+
+% %For setting theoreticalproposition
+% \usepackage{theorem}
+% \newcounter{theorem}
+%   
+% % To make theorems as theoretical propositions 
+% \newtheorem{theoreticalproposition}[theorem]{Theoretical Proposition}
+% 
+
+
+
+
+\iftoggle{draftVersion}{
+% The ``idea here heading`` is visible only in draft mode 
+\newcommand{\theIdeaIs}[1]{{\huge The main idea around here is: \textcolor{blue}{#1}}}
+}
+% Otherwise leave it out 
+{
+\newcommand{\theIdeaIs}[1]{}
+}
+
+
+\iftoggle{draftVersion}{
+
+}
+%% Otherwise leave it out 
+{ \renewenvironment{subAndRevbox}[2]{}{} }
+
+
+
+% Set the footnotes to arabic 
+\renewcommand{\thefootnote}{\arabic{footnote}} 
+
+
