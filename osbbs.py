@@ -1,74 +1,84 @@
+#!/usr/bin/env python3
+
 import re
-import sys
-import subprocess
-from pathlib import Path
+from rich import print as rprint
+from loguru import logger
 
-def modify_latex_file(input_file):
+def add_endfloat_package(content):
+    usepackage_pattern = re.compile(r'\\usepackage.*')
+    endfloat_added = False
+    new_content = []
+
+    for line in content:
+        if usepackage_pattern.match(line):
+            if not endfloat_added:
+                new_content.append(line)
+                new_content.append('\\usepackage{endfloat}\n')
+                endfloat_added = True
+            else:
+                new_content.append(line)
+        else:
+            new_content.append(line)
+
+    if not endfloat_added:
+        new_content.insert(0, '\\usepackage{endfloat}\n')
+
+    return new_content
+
+def transform_footnotes_to_endnotes(content):
+    footnotes = []
+    new_content = []
+    footnote_pattern = re.compile(r'\\footnote{(.*?)}')
+
+    for line in content:
+        if footnote_pattern.search(line):
+            footnotes.append(footnote_pattern.findall(line)[0])
+            line = footnote_pattern.sub(r'\\endnote{\1}', line)
+        new_content.append(line)
+
+    new_content.append('\n\\theendnotes\n')
+    return new_content
+
+def remove_page_numbers_headers_footers(content):
+    new_content = []
+    page_number_pattern = re.compile(r'\\pagenumbering{.*?}')
+    header_footer_pattern = re.compile(r'\\(lhead|chead|rhead|lfoot|cfoot|rfoot){.*?}')
+
+    for line in content:
+        line = page_number_pattern.sub('', line)
+        line = header_footer_pattern.sub('', line)
+        new_content.append(line)
+
+    return new_content
+
+def process_latex_document(input_file, output_file):
+    logger.info(f"Reading input file: {input_file}")
     with open(input_file, 'r') as file:
-        content = file.read()
+        content = file.readlines()
 
-    # Add necessary packages and setup
-    preamble_additions = r"""
-    % Packages for handling collections and endnotes
-    \usepackage{etoolbox}
-    \usepackage{collect}
-    \usepackage{endnotes}
-    \renewcommand{\footnote}{\endnote}
+    logger.info("Adding endfloat package")
+    content = add_endfloat_package(content)
 
-    % Define collections for figures
-    \definecollection{allfigures}
+    logger.info("Transforming footnotes to endnotes")
+    content = transform_footnotes_to_endnotes(content)
 
-    % Collect figures into the defined collection
-    \AtBeginEnvironment{figure}{\addtocounter{figure}{-1}\begin{collect}{allfigures}}
-    \AtEndEnvironment{figure}{\end{collect}}
+    logger.info("Removing page numbers, headers, and footers")
+    content = remove_page_numbers_headers_footers(content)
 
-    % Clear headers and footers, and remove page numbers
-    \usepackage{fancyhdr}
-    \usepackage{nopageno}
-    \fancypagestyle{plain}{
-      \fancyhf{} % Clear all header and footer fields
-      \renewcommand{\headrulewidth}{0pt} % Remove the header rule
-      \renewcommand{\footrulewidth}{0pt} % Remove the footer rule
-    }
-    \pagestyle{plain}
-    """
+    logger.info(f"Writing output file: {output_file}")
+    with open(output_file, 'w') as file:
+        file.writelines(content)
 
-    end_document_addition = r"""
-    \AtEndDocument{
-        \clearpage
-        \section*{Figures}
-        \printcollection{allfigures}
-        \clearpage
-        \section*{Endnotes}
-        \theendnotes
-    }
-    """
-
-    # Insert the preamble additions after \documentclass
-    content = re.sub(r'(\\documentclass\[.*?\]{WileyNJDv5})', r'\1' + preamble_additions, content, 1)
-
-    # Insert the end document additions before \end{document}
-    content = re.sub(r'(\\end{document})', end_document_addition + r'\1', content, 1)
-
-    # Write the modified content to a new file
-    output_tex_file = input_file.replace('.tex', '_modified.tex')
-    with open(output_tex_file, 'w') as file:
-        file.write(content)
-
-    return output_tex_file
-
-def convert_to_word(tex_file):
-    docx_file = tex_file.replace('.tex', '.docx')
-    subprocess.run(['pandoc', tex_file, '-o', docx_file])
-    return docx_file
+    rprint(f"[green]Processing complete. Output written to {output_file}[/green]")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <input_file.tex>")
-        sys.exit(1)
+    logger.add("process_latex.log", rotation="500 MB")  # Automatically rotate too big file
+    input_file = 'input.tex'
+    output_file = 'output.tex'
 
-    input_file = sys.argv[1]
-    output_tex_file = modify_latex_file(input_file)
-    output_docx_file = convert_to_word(output_tex_file)
-    print(f"Converted {input_file} to {output_docx_file}")
+    rprint("[bold]Starting LaTeX document processing...[/bold]")
+    process_latex_document(input_file, output_file)
+    rprint("[bold]Processing finished.[/bold]")
+
+
 
