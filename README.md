@@ -28,6 +28,9 @@ Don't get mad with academia, the publisher, the journal, or the editorial office
 
 A world where researchers use Latex instead of Word, even if the dinosaurs keep requesting "We want MS Word", "We want MS Word" without saying  "I don't know anything else"  
 
+# Intended audience / Targeted users 
+
+Researches proficient with Tex&/LaTex, can open a terminal and type in the command line, but still wants to deal with publishers that ask them to submit their journal in awkward and old-fashioned formats.  
 # OSBBS inputs 
 
 **osbbs** will receive a main TeX/LaTex file (e.g., main.tex) as input. 
@@ -37,6 +40,27 @@ A world where researchers use Latex instead of Word, even if the dinosaurs keep 
 - **osbbs** also produces a configuration file osbbs.config.tex file that is included in the final osbbs.(main-file).tex output file. That configuration file can be changed according to your needs - after all, you might be resubmitting the document somewhere else. 
 
 # What OSBBS does? 
+
+It will interactively ask: 
+
+* Do you want all your text to be formatted with double space between lines (except the references?). 
+* Do you want all footnotes at the end of the document as endnotes, after refrences in a separate section? 
+* Do you want all figures at the end of the document, after the references in a separate section? 
+* Do you want all figures in a separate document that includes only your figures?
+* Do you want all figures in a zip file that includes all your figures? 
+* Do you want all tables at the end of the document, after the references in a separate section?
+* Do you want all tables in a zip file that includes all your tables in pdf format? 
+* Do you want to remove all headers, footers and page numbers (it helps for converting to the MS Word format)? 
+* Do you want to convert to the proprietary, expensive and non-interoperable? Microsoft Word format?
+* To convert to MS Word, do you want to use (1):
+** Pandoc?
+** Mathpix?
+** An online "free" converter and hope for the best?
+** Import the pdf directly on MS Word and hope for the best? 
+
+**osbbs**  then creates a new version of you LaTex main file with the  osbbs prefix (e.g., osbbs.main.tex) according your answers. 
+**osbbs**  will attempt convert to MS Word using Pandoc (free), MathPix (paid)  directly, or offer tips on how to deal with other ways of converting PDF documents
+created with LaTex to the proprietary, expensive and non-interoperable? Microsoft Word format?
 
 
 # How OSBBS works?
