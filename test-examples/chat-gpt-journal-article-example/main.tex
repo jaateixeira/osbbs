@@ -1,1 +1,92 @@
-ls
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+\title{A Simple LaTeX Article}
+\author{ChatGPT}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This article demonstrates the basic structure of a LaTeX document including figures and tables. It serves as an example for writing scientific papers with LaTeX.
+\end{abstract}
+
+\section{Introduction}
+LaTeX is a powerful typesetting system commonly used for technical and scientific documents. It allows for precise control over document formatting and is highly extensible. This article includes examples of figures, tables, and references.
+
+\section{Figures}
+Figures are an essential part of scientific documents. Below are two example figures created using simple graphics.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{example-figure1.png}
+\caption{Example Figure 1: A simple placeholder image.}
+\label{fig:example1}
+\end{figure}
+
+Figure \ref{fig:example1} shows a simple placeholder image.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{example-figure2.png}
+\caption{Example Figure 2: Another simple placeholder image.}
+\label{fig:example2}
+\end{figure}
+
+Figure \ref{fig:example2} shows another simple placeholder image.
+
+\section{Tables}
+Tables are useful for organizing data in a clear and concise manner. Below are two example tables.
+
+\begin{table}[H]
+\centering
+\caption{Example Table 1: Sample data.}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+\hline
+A & B & C \\
+\hline
+D & E & F \\
+\hline
+G & H & I \\
+\hline
+\end{tabular}
+\label{tab:example1}
+\end{table}
+
+Table \ref{tab:example1} shows a simple table with three columns and three rows of data.
+
+\begin{table}[H]
+\centering
+\caption{Example Table 2: More sample data.}
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Item} & \textbf{Quantity} & \textbf{Price} \\
+\hline
+Apples & 10 & \$1.00 \\
+\hline
+Bananas & 5 & \$0.50 \\
+\hline
+Oranges & 8 & \$0.80 \\
+\hline
+\end{tabular}
+\label{tab:example2}
+\end{table}
+
+Table \ref{tab:example2} shows another table with items, quantities, and prices.
+
+\section{Conclusion}
+This article provided a brief overview of how to include figures and tables in a LaTeX document. LaTeX is a versatile tool for creating professional-looking documents, especially for scientific and technical writing.
+
+\printbibliography
+
+\end{document}
+
