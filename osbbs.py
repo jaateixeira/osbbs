@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import re
+import argparse
 from rich import print as rprint
 from loguru import logger
 
@@ -22,6 +23,27 @@ def add_endfloat_package(content):
 
     if not endfloat_added:
         new_content.insert(0, '\\usepackage{endfloat}\n')
+
+    return new_content
+
+def add_endnotes_package(content):
+    usepackage_pattern = re.compile(r'\\usepackage.*')
+    endnotes_added = False
+    new_content = []
+
+    for line in content:
+        if usepackage_pattern.match(line):
+            if not endnotes_added:
+                new_content.append(line)
+                new_content.append('\\usepackage{endnotes}\n')
+                endnotes_added = True
+            else:
+                new_content.append(line)
+        else:
+            new_content.append(line)
+
+    if not endnotes_added:
+        new_content.insert(0, '\\usepackage{endnotes}\n')
 
     return new_content
 
@@ -59,6 +81,9 @@ def process_latex_document(input_file, output_file):
     logger.info("Adding endfloat package")
     content = add_endfloat_package(content)
 
+    logger.info("Adding endnotes package")
+    content = add_endnotes_package(content)
+
     logger.info("Transforming footnotes to endnotes")
     content = transform_footnotes_to_endnotes(content)
 
@@ -73,12 +98,14 @@ def process_latex_document(input_file, output_file):
 
 if __name__ == "__main__":
     logger.add("process_latex.log", rotation="500 MB")  # Automatically rotate too big file
-    input_file = 'input.tex'
-    output_file = 'output.tex'
+
+    parser = argparse.ArgumentParser(description="Process a LaTeX document.")
+    parser.add_argument("-i", "--input", required=True, help="Input LaTeX file")
+    parser.add_argument("-o", "--output", default="output.tex", help="Output LaTeX file (default: output.tex)")
+
+    args = parser.parse_args()
 
     rprint("[bold]Starting LaTeX document processing...[/bold]")
-    process_latex_document(input_file, output_file)
+    process_latex_document(args.input, args.output)
     rprint("[bold]Processing finished.[/bold]")
-
-
 

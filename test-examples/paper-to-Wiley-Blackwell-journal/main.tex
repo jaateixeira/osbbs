@@ -37,81 +37,26 @@
 \acrodef{gpu}[GPUs]{graphics Processing Unit}
 \acrodef{GPUs}[GPUs]{graphics Processing Units}
 
-%%%%%%%%%%%%%%%%%%%%  JPIM re-submittion  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% \usepackage{setspace}
-% 
-% \usepackage{endnotes}
-% 
-% % Redefine \footnote to create endnotes
-% \renewcommand{\footnote}{\endnote}
-% 
-% 
-% 
-% % For putting a nice box arround Figure here or Table here
-% \usepackage[tikz]{bclogo}
-% \usepackage{calc}
-% \usepackage[nomessages]{fp}%
-% 
-% 
-% % To write down that a table or Figure should be here inserted 
-% \newcommand{\InsertHere}[4]{
-% % Arg1 {#1} Arg2 {#2} Arg3 {#3} Arg4{#4} 
-% \begin{bclogo}[couleur = blue!30, arrondi = 0.1, logo=\bctrombone, barre = none, marge=5]{{#1} {#3}}
-% \vspace{#4pt}
-% {#1} {#3} \textbf{#2} to be inserted here.
-% \vspace{#4pt}
-% \end{bclogo}
-% }
 
-
-% Modify hyperref settings
-%\hypersetup{
-%    draft=true
-%}
-
-% \hypersetup{hidelinks}
-% 
-% 
-% % This makes it to easier converstion to word 
-% % Load necessary packages
-% \usepackage{fancyhdr}
-% \usepackage{nopageno}
-% 
-% % Clear all header and footer fields
-% \fancypagestyle{plain}{
-%   \fancyhf{} % Clear all header and footer fields
-%   \renewcommand{\headrulewidth}{0pt} % Remove the header rule
-%   \renewcommand{\footrulewidth}{0pt} % Remove the footer rule
-% }
-% \pagestyle{plain}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
-% Set double spacing
-
-
 
 \title{Exploring the Roles of Non-Commercial Entities in Open and Coopetitive Ecosystems}
 
-\author[1]{Anonymous author}
+\author[1]{First Anonymous Author}
 
-\author[2]{The other one}
+\author[2]{Second Anonymous Author}
 
 
 \authormark{Anonymous authors \textsc{et al.}}
 \titlemark{Exploring the Roles of Non-Commercial Entities in Open and Coopetitive Ecosystems}
 
-\address[1]{\orgdiv{Not that department}, \orgname{At that University}, %\orgaddress{\state{State Name}, 
-\country{In there}}
+\address[1]{\orgdiv{Department Name}, \orgname{Anonymous Institution Name}, \orgaddress{\state{State Name}, \country{Country Name}}}
 
 
 
-\corres{Corresponding author: Super Mario \email{SuperMario@ninten.do}}
+\corres{Corresponding author is anonymous, This is sample corresponding address. \email{devnull@gmail.com}}
 
-\presentaddress{ NY, Italy or Japan, not sure.
-}
+\presentaddress{This is sample for present address text this is sample for present address text.}
 
 %\fundingInfo{Text}
 %\JELinfo{ejlje}
@@ -134,8 +79,6 @@
 
 \maketitle
 
-
-%\doublespacing
 
 %\renewcommand\thefootnote{}
 %\footnotetext{\textbf{Abbreviations:} ANA, anti-nuclear antibodies; APC, antigen-presenting cells; IRF, interferon regulatory factor.}
@@ -575,9 +518,9 @@ Additionally, the visibility and transparency of contributions in OSS projects c
 
 
 
-% Commented to cut pages 
-% \section{Empirical background}
-% \label{sec:empiricalbc}
+
+\section{Empirical background}
+\label{sec:empiricalbc}
 
 
 %\subsection{\ac{ML} and the rebirth of the \ac{AI} industry } %<-- here so we know what was done in ICIS 2016
@@ -592,21 +535,57 @@ Additionally, the visibility and transparency of contributions in OSS projects c
  %Be sure you include recent work in the IS community.
  %\end{subAndRevbox}
 
-% 
-%  
-% In recent years, \ac{AI}  and \ac{ML}-based solutions have undergone a transformative evolution, transitioning from niche applications to mainstream ubiquity across various sectors \citep{davenport2023all}. This shift has been largely driven by significant developments in \ac{AI} models, enhanced computing capabilities, and increased data availability. These advancements have enabled the deployment of \ac{AI} technologies in diverse business operations and strategic processes. The industrial applications of \ac{AI} are expanding, with significant impacts on sectors like manufacturing, healthcare, and transportation \citep{benbya2020artificial}.
-% 
-% \ac{AI} and\ac{ML} -based tools operate on a few fundamental principles as discussed by \citet{nguyen2022artificial}: (i) using learning algorithms to automate the task of generating knowledge, (ii) encapsulating this knowledge in the form of models that are readily interpretable, and (iii) leveraging these mathematical representations to automate (cognitive) tasks. When integrating \ac{AI} in business operations utilizing these principles, there are numerous benefits for organizations \citep{enholm2022artificial}, from increased efficiency and automation, to increased customer experience and cost savings. 
-% 
-% The landscape of \ac{AI} platforms and ecosystems is analysed in several studies \citep{jacobides2021evolutionary, burstrom2021ai} that mapped interdependencies among developers, manufacturers, and users. As it has been discussed before in the literature \citep{jacobides2021evolutionary}, a few large tech firms dominate the \ac{AI} space, particularly in sectors such as search engines, and cloud computing-based solutions. These firms, such as Google or Microsoft, significantly influence AI's development trajectory by investing also in academic research and controlling the necessary computational resources. However, while this setting was associated with an uneven distribution of \ac{AI} capabilities, more recently several factors  contributed to the 'democratization' of \ac{AI} \citep{sundberg2023democratizing}: (i) the advancements in transfer learning and pre-trained models, (ii) government initiatives to support \ac{AI} research and adoption, and (iii) \ac{AI} capabilities offered as services in cloud platforms. Another core factor is  that \ac{AI} and \ac{ML} tools have become more accessible and user-friendly, allowing a broader range of developers and small businesses to implement \ac{AI} solutions, with a good example of this being TensorFlow. 
-% 
-% 
-% 
-% TensorFlow,  was created by the Google Brain team, a deep learning \ac{AI} research team under the umbrella of Google AI. It was open-sourced (i.e., released under an open-source license) in November 2015. It originated from Google's earlier framework called DistBelief, which was focused on training deep neural networks as a proprietary system. Unlike its predecessor, TensorFlow aimed to offer greater adaptability and scalability by supporting various \ac{ML} algorithms and being deployable across multiple computer platforms. Its quick adoption stemmed from its capacity to handle large-scale \ac{ML} tasks effectively via its graph-based computational model that was quite intuitive for representing data transformations. Since its introduction, TensorFlow has emerged as one of the primary frameworks in this field, significantly contributing to progress in \ac{AI} by empowering researchers and developers to build intricate \ac{ML} models with relative simplicity. Compared to other deep learning frameworks made available by academic researchers, TensorFlow was released with an effort to make deep learning more accessible. TensorFlow provided extensive documentation, tutorials, YouTube content, trained models, large training data, and even limited free access to cloud computing infrastructure to train models. Furthermore, it was mostly written in Python, and allowed the definition of \ac{AI} and \ac{ML} models in Python, one of the most popular languages within the open-source community.  
-% 
+
+ 
+In recent years, \ac{AI}  and \ac{ML}-based solutions have undergone a transformative evolution, transitioning from niche applications to mainstream ubiquity across various sectors \citep{davenport2023all}. This shift has been largely driven by significant developments in \ac{AI} models, enhanced computing capabilities, and increased data availability. These advancements have enabled the deployment of \ac{AI} technologies in diverse business operations and strategic processes. The industrial applications of \ac{AI} are expanding, with significant impacts on sectors like manufacturing, healthcare, and transportation \citep{benbya2020artificial}.
+
+\ac{AI} and\ac{ML} -based tools operate on a few fundamental principles as discussed by \citet{nguyen2022artificial}: (i) using learning algorithms to automate the task of generating knowledge, (ii) encapsulating this knowledge in the form of models that are readily interpretable, and (iii) leveraging these mathematical representations to automate (cognitive) tasks. When integrating \ac{AI} in business operations utilizing these principles, there are numerous benefits for organizations \citep{enholm2022artificial}, from increased efficiency and automation, to increased customer experience and cost savings. 
+
+The landscape of \ac{AI} platforms and ecosystems is analysed in several studies \citep{jacobides2021evolutionary, burstrom2021ai} that mapped interdependencies among developers, manufacturers, and users. As it has been discussed before in the literature \citep{jacobides2021evolutionary}, a few large tech firms dominate the \ac{AI} space, particularly in sectors such as search engines, and cloud computing-based solutions. These firms, such as Google or Microsoft, significantly influence AI's development trajectory by investing also in academic research and controlling the necessary computational resources. However, while this setting was associated with an uneven distribution of \ac{AI} capabilities, more recently several factors  contributed to the 'democratization' of \ac{AI} \citep{sundberg2023democratizing}: (i) the advancements in transfer learning and pre-trained models, (ii) government initiatives to support \ac{AI} research and adoption, and (iii) \ac{AI} capabilities offered as services in cloud platforms. Another core factor is  that \ac{AI} and \ac{ML} tools have become more accessible and user-friendly, allowing a broader range of developers and small businesses to implement \ac{AI} solutions, with a good example of this being TensorFlow. 
 
 
 
+TensorFlow,  was created by the Google Brain team, a deep learning \ac{AI} research team under the umbrella of Google AI. It was open-sourced (i.e., released under an open-source license) in November 2015. It originated from Google's earlier framework called DistBelief, which was focused on training deep neural networks as a proprietary system. Unlike its predecessor, TensorFlow aimed to offer greater adaptability and scalability by supporting various \ac{ML} algorithms and being deployable across multiple computer platforms. Its quick adoption stemmed from its capacity to handle large-scale \ac{ML} tasks effectively via its graph-based computational model that was quite intuitive for representing data transformations. Since its introduction, TensorFlow has emerged as one of the primary frameworks in this field, significantly contributing to progress in \ac{AI} by empowering researchers and developers to build intricate \ac{ML} models with relative simplicity. Compared to other deep learning frameworks made available by academic researchers, TensorFlow was released with an effort to make deep learning more accessible. TensorFlow provided extensive documentation, tutorials, YouTube content, trained models, large training data, and even limited free access to cloud computing infrastructure to train models. Furthermore, it was mostly written in Python, and allowed the definition of \ac{AI} and \ac{ML} models in Python, one of the most popular languages within the open-source community.  
+
+
+
+
+%Scribendi checked  
+% Cloud computing is a model for enabling convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. The cloud computing model offers the promise of massive cost savings combined with increased IT agility. It is considered critical that government and industry begin adoption of this technology in response to difficult economic constraints. However, cloud computing technology challenges many traditional approaches to datacenter and enterprise application design and management. Cloud computing is currently being used; however, security, interoperability, and portability are cited as major barriers to broader adoption \citep{mell2009nist}.
+
+% Scribendi checked  
+%A cloud computing infrastructure enables on-demand network access to a shared
+%pool of configurable computing resources. This cloud model is based on on-demand self-service, virtualized resources,
+%rapid and elastic resource utilization, broad network access,
+%and measured quality of service. Increased availability and reliance on cloud computing services provides a strategic dynamic capability for firms to scale up or down their computing infrastructures. When the digital infrastructure and business strategy are fused, this rapid scaling ability becomes a strategic
+%dynamic capability for the firm to adapt to the dynamic
+%requirements of the digital marketplace \citep{bharadwaj2013digital}.  
+
+% % Scribendi checked  
+% Besides much buzz on cloud computing as a new model \citep{armbrust2010view,voas2009cloud}, the ideas behind it are much older. At the conceptual level, the overarching concept of delivering computing resources through a global network is rooted in the 1960s with the origins of the Internet --  the idea of an ``intergalactic computer network'' was introduced in the sixties by Joseph  Licklider, who was responsible for enabling the development of ARPANET in 1969.  Others attribute the ``cloud'' concept to computer scientist and cognitive scientist 
+% John McCarthy, who proposed the idea of computation being delivered as a public utility, similar to the service bureaus which date back to the sixties. 
+
+% At the industrial level,  one of the first milestones in cloud computing history was the arrival of Salesforce.com in 1999, which pioneered the concept of delivering enterprise applications via a simple website. The services firm paved the way for both specialist and mainstream software firms to deliver applications over the Internet. The next development was Amazon Web Services in 2002, which provided a suite of cloud-based services including storage, computation, and even human intelligence through the Amazon Mechanical Turk crowdsourcing marketplace. Launched in 2006, Amazon's Elastic Compute Cloud (EC2), became the leading commercial web-based service that allows small companies and individuals to rent computers on which to run their own computer applications \citep{arif2009}. By 2015, Amazon Web Services and its cloud computing offering were the most profitable unit within Amazon. Its \$1.57bn USD  sales and \$265m USD operating income in the first quarter of 2015 advanced both the relevance and the recognition of cloud computing industry as a whole \citep{forbes_aws_2015, bbc_aws_2015}.
+% 
+
+% % Scribendi checked  
+% Classical macro-economics theory suggests that a competitive environment drives innovation and entrepreneurship. So, 
+
+% Since our paper is about cooperation and competition, it is important to mention that the cloud computing business is dominated by a small number of players, including 
+% 1) Amazon, a pioneer in cloud computing services selling the Amazon EC2; 
+% 2) Google, selling services around its Compute Engine (Google Compute);  
+% and  3) Microsoft, heavily marketing cloud strategies based on its Azure cloud computing infrastructure (Microsoft Azure). 
+
+% Scribendi checked  
+%As a relevant remark,
+%Amazon, Google, and Microsoft do not provide cloud infrastructure products, merely computing services. In practice and if there were no alternatives, all cloud computation 
+%would run in hardware and software infrastructures controlled by very few players. Such control from the cloud computing service provider locks-in its customers \citep{briscoe2009digital,chow2009controlling,armbrust2010view}. 
+%Surprisingly, the leading product alternatives to Amazon EC2, Google Compute and Microsoft Azure are not commercial but rather four open-source projects. They include:  
+%1) OpenStack, our unit of analysis;  
+%2) CloudStack, backed by Citrix and the Apache Software Foundation;  
+%3) Eucalyptus, a system that is compatible with Amazon EC2 services and backed by many IT consulting firms;
+%and 4) OpenNebula, more present in the European markets and backed by C12G, a Spanish company. 
+% During our research, we perceived that many cloud computing vendors associated with the leading open-source cloud computing ecosystems to ease the pain of ``selling cloud computing services that are famous and infamous for their single-vendor locking mechanisms''. 
 
 % 
 % \subsection{The TensorFlow case}
@@ -674,14 +653,10 @@ methodological notes that guided our research execution.
 
 %\improvement{methodological references must include IS research}
  
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Table}{Guiding methodological notes.}{\ref{t:mul_aproach}}{10}
-}
-{
  \begin{table}[h]
 \centering
 \small
-\caption{Guiding methodological notes.\label{t:mul_aproach}}
+\caption{Guiding methodological notes\label{t:mul_aproach}}
 %\begin{adjustbox}{width=0.9\textwidth,center}
  \begin{threeparttable}
 \begin{tabular}{|l|m{3.1cm}|m{4.3cm}|} % Format for ICIS 
@@ -784,7 +759,7 @@ Employed approach & Established within & Methodological notes \\
 \end{threeparttable}
 %\end{adjustbox}
 \end{table}
-}
+
 
 % Grammaly checked
 As in \citet{TeixeiraMian_et_al2016}, we aimed to integrate in a converging fashion information from multiple sources of evidence. Among them the software repository logs
@@ -867,10 +842,7 @@ we had already learned much about TensorFlow and its surrounding empirical backg
 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Table}{TOP 10 organizational contributors that cooperate with others in the co-production of TensorFlow.}{\ref{tcomercial}}{10}
-}
-{
+
 \begin{table}[h]
  \caption{TOP 10 organizational contributors that cooperate with others in the co-production of TensorFlow\label{tcomercial}.}
 \begin{tabularx}{1.0\textwidth}[]{clcl}
@@ -895,13 +867,10 @@ Order$^\dagger$ & Organization & (n) contributors & Key markets\\
 \item {$\dagger$  Order by number of contributors affiliated with the organization. If the number of contributors is the same, order is defined by the sum of the lines or code (LoC) submitted by each contributor.}
 \end{tablenotes}
 \end{table}
-}
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Table}{TOP 10 non-commercial contributors that cooperate with others in the co-production of TensorFlow}{\ref{tnoncomercial}}{10}
-}
-{
+
+
 \begin{table}[h]
  \caption{TOP 10 non-commercial contributors that cooperate with others in the co-production of TensorFlow\label{tnoncomercial}.}
 \begin{tabularx}{1.0\textwidth}[]{ccp{9cm}cl}
@@ -926,7 +895,7 @@ Order$^\dagger$ &  Overall & Organization & (n) contributors & Type\\
 
 
 \end{table}
-}
+
 
 
 
@@ -964,10 +933,7 @@ network of collaboration among developers in TensorFlow from Nov 2015 to April 2
 We note that many contributions were associated with email accounts for personal use (e.g., gmail, outlook, hotmail, ee and others) and therefore could not be associated with a specific organization. Google is visible in a central position, followed by chip-makers such as ARM, Intel, Nvidia, and AMD  in the leaderboard of the collaborative software co-production efforts. As in \citet{teixeira2015lessons,TeixeiraMian_et_al2016} the inter-individual network have a legend for the TOP 10 organizations with most contributors. Besides providing a visual clue of a giant core component comprised of developers affiliated with Google, the figure is too complex to make sense of who works with the non-commercial organizations that can barely be seen in the very dense visualization.  Therefore, the following figures take the TOP 10  non-commercial organizations as focal organizations into inter-organizational networks derived (i.e., transformed) from the same network visualized in  \Cref{figall}.
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Sociogram capturing collaboration among developers during Nov 2014 - Apr 2024.}{\ref{figall}}{10}
-}
-{Scrap log output for SNU
+
 \begin{figure}[h]
  \centering
  \includegraphics[draft=false,
@@ -976,7 +942,6 @@ keepaspectratio=true,width=0.9\textwidth,trim={0 1cm 0 2cm},clip]{Figures/all.pd
  \caption{Sociogram capturing collaboration among developers during Nov 2014 - Apr 2024.}
  \label{figall}
 \end{figure}
-}
 
 
 
@@ -988,16 +953,12 @@ keepaspectratio=true,width=0.9\textwidth,trim={0 1cm 0 2cm},clip]{Figures/all.pd
 
 
 % Generated by 5-add-code-to-main.tex.sh 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scrap log output for SNU.}{\ref{figSNU}}{10}
-}
-{
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,width=0.9\textwidth]{./Figures/noo/SNU_cropped.pdf}
-\caption{Scrap log output for SNU.\label{figSNU}}
+\caption{Scrap log output for SNU\label{figSNU}}
 \end{figure}
-}
+
 
 
 Our first figure capturing  inter-organizational network cooperation at an aggregated level (see \Cref{figSNU}), showcases relationships and interactions between SNU and the top ten contributors to the TensorFlow platform for \ac{AI} and \ac{ML} (i.e., Google, Intel, Nvidia,, , ARM, IBM, AMD, Microsoft, Huawei, Amazon and Naver).
@@ -1015,19 +976,14 @@ On the other hand, by  contributing to TensorFlow, SNU researchers can stay at t
 
 \subsection{Pointing our lenses to DFKI}
 
-
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for dfki.}{\ref{figdfki}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,width=0.9\textwidth]{./Figures/noo/dfki_cropped.pdf}
-\caption{Scraplog output for dfki.}
+\caption{Scraplog output for dfki}
 \label{figdfki}
 \end{figure}
-}
+
 
 
 Our second figure capturing  inter-organizational network cooperation at an aggregated level (see \Cref{figdfki}), showcases relationships and interactions between DFKI and the top ten contributors to the TensorFlow platform  in the same fashion as in \Cref{figSNU}.  Nodes represent organizations and edges represent collaboration as in the same way. Each node's is labeled with its organization name, and each edge is labeled with the  number of unique collaborations among software developers affiliated with the organizations that the edge connects. In other words, the high the edge's label number, the more developers affiliated with the two nodes cooperated with each other. 
@@ -1071,10 +1027,6 @@ Clear Project Identification, (2)  maintaining transparency within the open-sour
 % Licenses force open-coopetiton 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for chromium.}{\ref{fig:chromium}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1082,7 +1034,7 @@ Clear Project Identification, (2)  maintaining transparency within the open-sour
 \caption{Scraplog output for chromium}
 \label{fig:chromium}
 \end{figure}
-}
+
 
 
 
@@ -1111,10 +1063,6 @@ Our  \Cref{figispras} captures inter-organizational network cooperation  between
 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for ispras.}{\ref{figispras}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1122,7 +1070,7 @@ Our  \Cref{figispras} captures inter-organizational network cooperation  between
 \caption{Scraplog output for ispras}
 \label{figispras}
 \end{figure}
-}
+
 
 
 From the one side, Google and its TensorFlow partners benefited from the ISP static analysis and verification tools for TensorFlow that were designed to identify and correct bugs, improve code safety, and ensure compliance with coding standards in the project. Furthermore, the ISP also provided tools and services for the formal verification of TensorFlow's algorithms. A difficult task in computer science that involves creating mathematical models of the algorithms and proving their correctness and robustness.
@@ -1152,10 +1100,6 @@ PKU and the top ten organizational commercial companies that co-produce TensorFl
 
 % Question 1 ,2, 3 an 4 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for pku.}{\ref{figpku}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1163,7 +1107,7 @@ PKU and the top ten organizational commercial companies that co-produce TensorFl
 \caption{Scraplog output for pku}
 \label{figpku}
 \end{figure}
-}
+
 
 
 Significant contributions from PKU include research on Semantic Image Segmentation which involves detailed work on improving the accuracy and efficiency of semantic segmentation models. This project has seen contributions from both Google and academic researchers, including those from PKU, focusing on enhancing convolutional neural networks (CNNs) and developing new methods for object localization in images​. Another example is the ``Show and Tell'' image captioning system, where researchers from both organizations worked on improving the computer vision components of TensorFlow to generate more detailed and accurate image descriptions. This collaboration not only resulted in advancements in image captioning techniques but also provided extensive open-source in the form of code to TensorFlow.  PKU seems to act as a bridge to competence in computer image recognition that in the last years been improving a lot with the advance of \ac{AI} and \ac{ML}.
@@ -1183,10 +1127,12 @@ Georgia Tech has been actively involved in projects that leverage the TensorFlow
 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for gatech.}{\ref{figgatech}}{10}
-}
-{
+% What the figure shows 
+
+% Question 1 ,2, 3 an 4 
+
+% Generated by 5-add-code-to-main.tex.sh 
+
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1194,7 +1140,7 @@ Georgia Tech has been actively involved in projects that leverage the TensorFlow
 \caption{Scraplog output for gatech}
 \label{figgatech}
 \end{figure}
-}
+
 
 
 While conducting this research we learned that in the world of \ac{AI} deep learning, the infrastructure is not only about powerful computers with \ac{GPUs} or \ac{TPUs}. It is also about large amounts of memory and fast storage solutions, such as Solid-State Drives (SSDs) or distributed file systems, are crucial for managing vast datasets and model parameters that often deployed across multiple data center that require load balancing, parallelization efforts to work smoothly and consume fast amounts of electrical power and water for cooling. Many specialized frameworks, libraries and tools are also required for developing and optimizing deep learning models. Vast amounts of vast, clean, relevant, and readily accessible data are also important to deploy deep learning into production. The same applies to models, as the existence of reference pre-validated models is a key to developing newer and better models. 
@@ -1215,10 +1161,6 @@ As visible \Cref{figgatech}, MIT similar to all other non-commercial players lis
 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for mit.}{\ref{fig:mit}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1226,7 +1168,7 @@ As visible \Cref{figgatech}, MIT similar to all other non-commercial players lis
 \caption{Scraplog output for MIT}
 \label{fig:mit}
 \end{figure}
-}
+
 
 
 MIT have a strong association with the history of \ac{AI} for many decades. It brought to the table, expertise in Neural Network Optimization where the work by MIT researchers on optimizing neural networks has influenced TensorFlow's implementation.  Furthermore, MIT have been involved in the development of TensorFlow Federated, an extension of TensorFlow that facilitates federated learning. This library supports decentralized learning, where data remains on local devices and only model updates are shared, addressing privacy and data security concerns. 
@@ -1263,10 +1205,6 @@ For example, TensorFlowOnSpark is an open-source framework that combines TensorF
 On the one side, it is in the interest of the Apache Foundation to ensure that their solutions (e.g., Apache Hadoop and Apache Spark)  integrate very well with TensorFlow. If Apache projects seamlessly integrate with TensorFlow they become more attractive and useful, they grow with each other.  On the other hand, improving the interoperability between TensorFlow and Apache projects can result in more efficient data processing and model training workflows, which benefits both platforms and their users.  When starting and evolving TensorFlow, Google and its partner did not need to reinvent the wheel. They could for example benefit from a from a number of ready-available open-source projects such as: (1) the Hadoop's Hadoop Distributed File System (HDFS) offers a highly scalable and fault-tolerant storage solution that can handle vast amounts of data across many distributed nodes making it ideal for storing the large datasets required for training deep learning models in TensorFlow, (2) the  Hadoop's MapReduce and YARN (Yet Another Resource Negotiator) frameworks enable distributed data processing across a cluster of computers, (3) the Apache Spark analytics engine that offers in-memory data processing capabilities that can speed up data preprocessing and transformation tasks before feeding data into TensorFlow models, (4) the Apache Beam provides a unified programming model for batch and stream data processing, which can be integrated with TensorFlow  to build end-to-end machine learning pipelines that handle data ingestion, preprocessing, model training, and serving, and (5) the Apache Kafka is used for real-time data streaming and ingestion. It would cost immense time and money for Google to re-write this well-established community-driven projects orchestrated by the Apache Foundation. 
 
 
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for apache.}{\ref{figApache}}{10}
-}
-{
 % Generated by 5-add-code-to-main.tex.sh 
 \begin{figure}[h]
 \centering
@@ -1274,7 +1212,7 @@ On the one side, it is in the interest of the Apache Foundation to ensure that t
 \caption{Scraplog output for Apache}
 \label{figApache}
 \end{figure}
-}
+
  
 As evidenced by the following quote that also emerged during a second semi-structured interview with a TensorFlow developer recruited via e-mail and LinkedIn, TensorFlow depends on multiple open-source software projects. 
 
@@ -1301,18 +1239,13 @@ The university's School of Electrical Engineering and Computer Science is partic
 
 As visible in the computer-generated \Cref{figkth} obtained by mining the TensorFlow repository with Social Network Analysis, KTH has a strong tie with Google and several weaker ties with Naver, Nvidia, IBM (who have offices nearby KTH), AMD and Intel.  Some \ac{AI} and \ac{ML} startups born at KTH. One example is Logical Clocks, a Swedish startup founded in 2016 by a team of researchers from KTH, which is one of the notable success stories emerging from KTH’s academic environment. The company was established by experts in distributed systems and big data, who were involved in significant research projects at KTH. Logical Clocks is best known for developing Hopsworks, a data platform that features the world’s first ``Feature Store'' for machine learning, which integrates seamlessly with TensorFlow. The collaboration between Logical Clocks, Google and KTH, which is to a large extent publicly funded, enhances TensorFlow's functionality, particularly in handling big data and distributed machine learning tasks therefore bringing value from public money spent on research and education in the past back to to the society as a whole. 
 
-
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for kth.}{\ref{figkth}}{10}
-}
-{
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,width=0.9\textwidth]{./Figures/noo/kth_cropped.pdf}
 \caption{Scraplog output for KTH}
 \label{figkth}
 \end{figure}
-}
+
 
 
 Contributions from KTH  to the TensorFlow ecosystem have included enhancements to its distributed training capabilities, improvements to data ingestion and pre-processing pipelines, and the development of new tools and libraries that extend TensorFlow's functionality. Those are important as the training of complex models does not fit in one big machine. The work needs to be distributed across machines and process the aggregated results back - a very complex task as the allocation of computing resources is often limited, failures might occur across heterogeneous computing nodes and bottlenecks need to be minimized. 
@@ -1354,18 +1287,13 @@ As visible in the computer-generated \Cref{figberkeley}, Berkeley has a strong t
 
 
 % Generated by 5-add-code-to-main.tex.sh 
-
-\iftoggle{TaFigOnEnd}{
-\InsertHere{Figure}{Scraplog output for berkeley.}{\ref{figberkeley}}{10}
-}
-{
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,width=0.9\textwidth]{./Figures/noo/berkeley_cropped.pdf}
 \caption{Scraplog output for berkeley}
 \label{figberkeley}
 \end{figure}
-}
+
 
 Berkeley University hosts two labs that play an important role in the TensorFLow ecosystem. The Berkeley Artificial Intelligence Research (BAIR),  contributed to TensorFlow by developing new algorithms and techniques for \ac{ai} and \ac{ml}. Another lab hosted by Berkeley, the Algorithms, Machines, and People Lab (AMPLab), with expertise in large-scale data processing and distributed computing, has helped improve TensorFlow's capabilities in these areas. Berkeley's expertise in the realm of chipset design and operating systems contributed to Google's and Intel's efforts to improve TensorFlow's performance on Intel processors and accelerators. Even if Nvidia currently designs the most desired chips for \ac{ai} and \ac{ml} applications, due to the number of cores available for matrix multiplication within a single chip \citep[see][]{Reuther_et_al2019}, the processors of Intel are still the most deployed one across servers and clouds worldwide. Therefore, it from the interest of both Intel and Google to improve TensorFlow's performance on Intel processors and accelerators. Otherwise, consumers might move to other platforms.  Berkeley expertise offered not only expert consulting, but also code contributions from faculty scholars and students who co-developed new features, bug fixes, and performance improvements, which were shared with the broader TensorFlow community.
 
@@ -1642,21 +1570,5 @@ Our work also  illustrates how aligned incentives and relaxed IP constraints can
 
 
 \bibliography{references}
-
-%\section*{Footnotes in the end as requested}
-%\theendnotes
-
-
-
-\iftoggle{TaFigOnEnd}{
-\clearpage
-\section*{Figures to be included in the end as requested}
-\input{FiguresAtEnd.tex}
-
-\clearpage
-\section*{Tables to be included  in the end as requested}
-\input{TablesAtEnd.tex}
-}
-{}
 
 \end{document}
