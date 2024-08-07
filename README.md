@@ -1,7 +1,7 @@
 # OSBBS - One Steep Back Before Submitting ... your paper to a publisher 
 
 # Problem statement
-Researchers produce original articles in Latex that are formatted in a publication-ready quality in pdf,  to be asked then by some editorial office to do some things that only ease the job of the publisher after work is accepted : 
+Researchers produce original articles in Latex that are formatted in a publication-ready quality in pdf,  to be asked then by some editorial office to do some things that only eases the job of the publisher's typesetter after work is accepted : 
 * Put all footnotes in the end.
 * Put all figures in the end or submit them separately.  
 * Put all tables in the end or submit them separately.
