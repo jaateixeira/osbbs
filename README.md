@@ -73,7 +73,8 @@ created with LaTex to the proprietary, expensive and non-interoperable? Microsof
 - **osbbs** removes footers and headers by removing all commands like `\fancyhead[...]{...}`, `\fancyfoot[...]{...}`, `\lhead{...}`, `\chead{...}`, `\rhead{...}`, `\lfoot{...}`, \cfoot`{...}`, and `\rfoot{...}` that customize fancy headers and footers. Then it adds the following comments to the code before and after `\begin{document}`
 
 ```latex
-% check if the `fancyhdr` package is already loaded:**
+% added by the osbbs script
+% to check if the `fancyhdr` package is already loaded
 
  \makeatletter
    \@ifpackageloaded{fancyhdr}{}{
@@ -82,21 +83,31 @@ created with LaTex to the proprietary, expensive and non-interoperable? Microsof
    \makeatother
 
 
-% Set the header and footer to be empty
+% added by the osbbs script
+% to set the header and footer to be empty
 \fancyhf{} % Clear all header and footer fields
 
-% Apply the fancy page style
+% added by the osbbs script
+% to apply the fancy page style
 \pagestyle{fancy}
 
 \begin{document}
 
-% Ensure the first page also has no header or footer
+% added by the osbbs script
+% to ensure the first page also has no header or footer
+% you might want to move this command somewhere else if you wish to keep fancy header or footer in the first page of the document
 \thispagestyle{fancy}
 
 ```
 Please note removing page numbers, footers, headers can improve the quality of translatation from the LaTeX word to the MS WORD doc or docx format.
 
 
-- **osbbs** lets you know when something was added or removed from the document (e.g., main.tex) by using comments (e.g., `% added by the osbbs script`  or  `% commented by the ossbs script`). It also adds `% The latex document was minimally processed by the ossbs script (see https://github.com/jaateixeira/osbbs/).` to guide future readers of the modified LaTeX code. 
+- **osbbs** lets you know when something was added or removed from the document (e.g., main.tex) by using comments (e.g., `% added by the osbbs script`  or  `% commented by the ossbs script`). It also adds `% The latex document was minimally processed by the ossbs script (see https://github.com/jaateixeira/osbbs/).` to guide future readers of the modified LaTeX code.
+
+# Installation 
+
+# Usage 
+
+# Contributors guide
 
 
