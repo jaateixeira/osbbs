@@ -1,5 +1,27 @@
 # OSBBS - One Steep Back Before Submitting ... your paper to a publisher 
 
+# Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Vision](#vision)
+3. [OSBBS inputs](#osbbs-input)
+4. [OSBBS outputs](#osbbs-outputs)
+5  [What OSBBS does](#osbbs-outputs)
+6 [What OSBBS does](#osbbs-outputs)
+7 [Installation](#installation)
+   - [Prerequisites](#prerequisites)
+   - [Setup](#setup)
+8. [Usage](#usage)
+   - [Running the Application](#running-the-application)
+   - [Configuration](#configuration)
+9. [Contributing](#contributing)
+   - [Code of Conduct](#code-of-conduct)
+   - [Pull Requests](#pull-requests)
+10. [License](#license)
+11. [Contact](#contact)
+12. [Acknowledgments](#acknowledgments)
+
+
 # Problem statement
 Researchers produce original articles in Latex that are formatted in a publication-ready quality in pdf,  to be asked then by some editorial office to do some things that only eases the job of the publisher's typesetter after work is accepted : 
 * Put all footnotes in the end.
@@ -31,6 +53,7 @@ A world where researchers use Latex instead of Word, even if the dinosaurs keep 
 # Intended audience / Targeted users 
 
 Researches proficient with Tex&/LaTex, can open a terminal and type in the command line, but still wants to deal with publishers that ask them to submit their journal in awkward and old-fashioned formats.  
+
 # OSBBS inputs 
 
 **osbbs** will receive a main TeX/LaTex file (e.g., main.tex) as input. 
