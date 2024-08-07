@@ -72,9 +72,15 @@ created with LaTex to the proprietary, expensive and non-interoperable? Microsof
 - **osbbs** removes page numbers by removing all `\pagenumbering{...}` and `\thispagestyle{...}` commands in the document (e.g., main.tex) and adding then `\pagestyle{empty}` to the preamble.
 - **osbbs** removes footers and headers by removing all commands like `\fancyhead[...]{...}`, `\fancyfoot[...]{...}`, `\lhead{...}`, `\chead{...}`, `\rhead{...}`, `\lfoot{...}`, \cfoot`{...}`, and `\rfoot{...}` that customize fancy headers and footers. Then it adds the following comments to the code before and after `\begin{document}`
 
-```
-  % Include the fancyhdr package
-\usepackage{fancyhdr}
+```latex
+% check if the `fancyhdr` package is already loaded:**
+
+ \makeatletter
+   \@ifpackageloaded{fancyhdr}{}{
+     \usepackage{fancyhdr}
+   }
+   \makeatother
+
 
 % Set the header and footer to be empty
 \fancyhf{} % Clear all header and footer fields
