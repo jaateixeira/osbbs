@@ -70,7 +70,27 @@ created with LaTex to the proprietary, expensive and non-interoperable? Microsof
 - The **endfloat** package in LaTeX [https://ctan.org/pkg/endfloat](https://ctan.org/pkg/endfloat) is used to move all figures and tables to the end of a document. By including the package in the preamble of your LaTeX document with `\usepackage{endfloat}`, the package will automatically repositions all figures and tables to the end of the document, while leaving markers (aka placeholders) in the text where they were originally placed. Additionally, it generates lists of figures and tables at the end, making it easier to reference them.  **osbbs** uses **endfloat** for simplicity. Howwever, note that the **collections** [https://ctan.org/pkg/collect?lang=en](https://ctan.org/pkg/collect) can also be used. Please cosider it for complex documents with multiple types of floats.
 - The **endnotes** package in LaTeX [https://ctan.org/pkg/endnotes](https://ctan.org/pkg/endnotes) is used transform all footnotes that appear as we read the documento into endnotes at the end of the document.
 - **osbbs** removes page numbers by removing all `\pagenumbering{...}` and `\thispagestyle{...}` commands in the document (e.g., main.tex) and adding then `\pagestyle{empty}` to the preamble.
-- **osbbs** removes footers and headers by removing all commands like \fancyhead[...]{...}, \fancyfoot[...]{...}, \lhead{...}, \chead{...}, \rhead{...}, \lfoot{...}, \cfoot{...}, and \rfoot{...} that customize fancy headers and footers. Then it just writes 
-- **osbbs** lets you know when something was added or removed from the document (e.g., main.tex) by using comments (e.g., `% added by the osbbs script`  or  `% commented by the ossbs script). It also adds "% The latex document was minimally processed by the ossbs script (see https://github.com/jaateixeira/osbbs/)." to guide future readers of the modified LaTeX code. 
+- **osbbs** removes footers and headers by removing all commands like `\fancyhead[...]{...}`, `\fancyfoot[...]{...}`, `\lhead{...}`, `\chead{...}`, `\rhead{...}`, `\lfoot{...}`, \cfoot`{...}`, and `\rfoot{...}` that customize fancy headers and footers. Then it adds the following comments to the code before and after `\begin{document}`
+
+```
+  % Include the fancyhdr package
+\usepackage{fancyhdr}
+
+% Set the header and footer to be empty
+\fancyhf{} % Clear all header and footer fields
+
+% Apply the fancy page style
+\pagestyle{fancy}
+
+\begin{document}
+
+% Ensure the first page also has no header or footer
+\thispagestyle{fancy}
+
+```
+Please note removing page numbers, footers, headers can improve the quality of translatation from the LaTeX word to the MS WORD doc or docx format.
+
+
+- **osbbs** lets you know when something was added or removed from the document (e.g., main.tex) by using comments (e.g., `% added by the osbbs script`  or  `% commented by the ossbs script`). It also adds `% The latex document was minimally processed by the ossbs script (see https://github.com/jaateixeira/osbbs/).` to guide future readers of the modified LaTeX code. 
 
 
