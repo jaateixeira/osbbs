@@ -64,4 +64,9 @@ created with LaTex to the proprietary, expensive and non-interoperable? Microsof
 
 
 # How OSBBS works?
-safd s
+
+**osbbs**  changed the latext documnent (e.g., main.tex) by loading certaing packages (e.g., endnotes, endfloat, collections) and corresponding commands to perform the actions requested by the user. 
+
+- The **endfloat** package in LaTeX is used to move all figures and tables to the end of a document. By includeing the package in the preamble of your LaTeX document with \usepackage{endfloat}, the package will automatically repositions all figures and tables to the end of the document, while leaving markers in the text where they were originally placed. Additionally, it generates lists of figures and tables at the end, making it easier to reference them.  **osbbs** uses **endfloat** for simplicity. The **collections** can also be used. Please cosider it for complex documents with multiple types of floats.
+- 
+
