@@ -108,4 +108,3 @@ if __name__ == "__main__":
     rprint("[bold]Starting LaTeX document processing...[/bold]")
     process_latex_document(args.input, args.output)
     rprint("[bold]Processing finished.[/bold]")
-
