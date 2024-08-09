@@ -142,4 +142,10 @@ Please note removing page numbers, footers, headers can improve the quality of t
 
 # Contributors guide
 
+## Planned features 
+
+### Easy hacks 
+
+- Integrate with the Google Docs API to create a Google Docs document that can then be exported by the users to MS word 
+- Integrate with several PDF 2 MS word APIs available in the market such as Adobe PDF Services API and Zamzar and ConvertAPI 
 
