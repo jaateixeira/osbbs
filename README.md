@@ -1,6 +1,6 @@
 # OSBBS - One Steep Back Before Submitting ... your paper to a publisher 
 
-The **osbbs** script automates some of the common old-school requests commonoly asked by editorial offices that do not make much sense for LaTeX submittions but can be easiluy automated and done in seconds (e.g., put footnotes at the end, and all figures in separate files). A simple step back before submitting your article to a journal that does not welcome good-looking, latex-produced, publication-ready submissions.
+The **osbbs** script automates some of the common old-school requests commonly asked by editorial offices that do not make much sense for LaTeX submissions but can be easily automated and done in seconds (e.g., put footnotes at the end, and all figures in separate files). A simple step back before submitting your article to a journal that does not welcome good-looking, latex-produced,  publication-ready submissions.
 
 # Table of Contents
 
