@@ -75,7 +75,9 @@ It will interactively ask:
 * Do you want all figures in a zip file that includes all your figures? 
 * Do you want all tables at the end of the document, after the references in a separate section?
 * Do you want all tables in a zip file that includes all your tables in pdf format? 
-* Do you want to remove all headers, footers and page numbers (it helps for converting to the MS Word format)? 
+* Do you want to remove all headers, footers and page numbers (it helps for converting to the MS Word format)?
+* Do you want to `flatten' your LaTeX source files by including all the \input and \include files into the main-file.tex root file (requires https://pypi.org/project/latex-flatten/)
+* Do you want to to remove all the % commented lines (requires arxiv-latex-cleaner)
 * Do you want to convert to the proprietary, expensive and non-interoperable? Microsoft Word format?
 * To convert to MS Word, do you want to use (1):
 ** Pandoc?
