@@ -5,6 +5,83 @@ import argparse
 from rich import print as rprint
 from loguru import logger
 
+
+def flatten_tex_main_file(main_file_path: str, output_path: str = None) -> str:
+    """
+    Flattens a LaTeX main file by recursively replacing \input and \include
+    commands with the actual file content.
+
+    Args:
+        main_file_path: Path to the main .tex file
+        output_path: Optional output file path (if None, returns flattened content as string)
+
+    Returns:
+        Flattened LaTeX content as string if output_path is None, else writes to file
+    """
+    import os
+    import re
+
+    def process_file(file_path, processed_files):
+        """Recursive helper to process files and track included files"""
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"LaTeX file not found: {file_path}")
+
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Track processed files to avoid circular includes
+        processed_files.add(os.path.abspath(file_path))
+
+        # Get directory for relative paths
+        file_dir = os.path.dirname(os.path.abspath(file_path))
+
+        # Patterns for \input and \include commands
+        patterns = [
+            r'\\input\s*\{([^}]+)\}',  # \input{file}
+            r'\\include\s*\{([^}]+)\}',  # \include{file}
+        ]
+
+        def replace_include(match):
+            # Extract filename from match
+            include_file = match.group(1).strip()
+
+            # Ensure .tex extension if not present
+            if not include_file.endswith('.tex'):
+                include_file += '.tex'
+
+            # Resolve path relative to current file
+            include_path = os.path.join(file_dir, include_file)
+            include_path = os.path.normpath(include_path)
+
+            # Avoid circular includes
+            if os.path.abspath(include_path) in processed_files:
+                return f"% Circular include avoided: {include_file}\n"
+
+            try:
+                # Recursively process included file
+                included_content = process_file(include_path, processed_files)
+                return f"% --- Start of {include_file} ---\n{included_content}\n% --- End of {include_file} ---\n"
+            except FileNotFoundError:
+                return f"% ERROR: Could not find included file: {include_file}\n"
+
+        # Apply all patterns
+        for pattern in patterns:
+            content = re.sub(pattern, replace_include, content)
+
+        return content
+
+    # Process main file
+    processed_files = set()
+    flattened_content = process_file(main_file_path, processed_files)
+
+    # Output result
+    if output_path:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(flattened_content)
+        return output_path
+    else:
+        return flattened_content
+
 def add_endfloat_package(content):
     usepackage_pattern = re.compile(r'\\usepackage.*')
     endfloat_added = False

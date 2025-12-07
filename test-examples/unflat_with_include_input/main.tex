@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{article}
+
+% Preamble with includes and inputs
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+% Document metadata
+\title{A Comprehensive Study on Latex File Structure}
+\author{John Doe}
+\date{\today}
+
+\begin{document}
+
+% Front matter
+\maketitle
+
+% Include abstract (frontmatter)
+\include{frontmatter/abstract}
+
+% Include acknowledgements (frontmatter)
+\include{frontmatter/acknowledgements}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Main content starts here
+\section{Introduction}
+This is the beginning of the main document. 
+We'll now include two chapters.
+
+% Include first chapter
+\include{chapters/introduction}
+
+% Some intermediate content in main file
+\section{Transition}
+Before moving to methodology, here's some content directly in the main file.
+
+% Include second chapter
+\include{chapters/methodology}
+
+% Appendix with input commands
+\appendix
+\section{Appendix A: Additional Data}
+Here's some appendix content.
+
+
+% Conclusion in main file
+\section{Conclusion}
+This concludes our paper. Both \texttt{\textbackslash include} and \texttt{\textbackslash input} 
+commands have been demonstrated.
+
+\end{document}
