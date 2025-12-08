@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import re
 import argparse
 from typing import Optional
@@ -24,8 +25,6 @@ def flatten_tex_main_file(main_file_path: str, output_path: str = None) -> str:
     Returns:
         Flattened LaTeX content as string if output_path is None, else writes to file
     """
-    import os
-    import re
 
     def process_file(file_path, processed_files):
         """Recursive helper to process files and track included files"""
@@ -190,147 +189,174 @@ def process_latex_document(input_file, output_file):
     with open(input_file, 'r') as file:
         content = file.readlines()
 
-    # Alternative: Ask questions one by one with immediate action
-    def ask_and_process_sequentially() -> None:
-        """
-        Ask questions sequentially and process each one immediately.
-        This allows you to call functions after each question.
-        """
 
-        console.print("\n")
-        console.print(Panel.fit(
-            "[bold cyan]📝 Sequential LaTeX Processing[/bold cyan]",
-            border_style="cyan"
-        ))
+    """
+    Ask questions sequentially and process each one immediately.
+    This allows you to call functions after each question.
+    """
 
-        # Initialize choices dictionary
-        choices = {}
+    console.print("\n")
+    console.print(Panel.fit("[bold cyan]📝 Sequential LaTeX Processing[/bold cyan]",border_style="cyan"))
 
-        # Question 1
-        console.print(Panel.fit(
+    # Initialize choices dictionary
+    choices = {}
+
+    # Question 1
+    console.print(Panel.fit(
             "[bold]1. Line Spacing[/bold]\n"
             "Do you want all your text to be formatted with double space between lines (except the references)?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["double_space"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
 
-        # Question 2
-        console.print("\n")
-        console.print(Panel.fit(
+    choices["double_space"] = answer == "y"
+        
+    if choices["double_space"]:
+        console.print("[bold red]ERROR:[/bold red] Double spacing not implemented yet", style="red")            
+        console.log("[ERROR] Double spacing not implemented yet", style="red")
+        
+
+    # Question 2
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]2. Footnotes to Endnotes[/bold]\n"
             "Do you want all footnotes at the end of the document as endnotes, after references in a separate section?",
             border_style="blue"
-        ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["endnotes"] = answer == "y"
+    ))
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["endnotes"] = answer == "y"
 
-        # Question 3
-        console.print("\n")
-        console.print(Panel.fit(
+    if choices["endnotes"]:
+
+        console.print("[bold green]ACTION:[/bold green] Let footnotes become endnotes", style="red")            
+            
+        logger.info("Adding endnotes package")
+        content = add_endnotes_package(content)
+
+        logger.info("Transforming footnotes to endnotes")
+        content = transform_footnotes_to_endnotes(content)
+
+
+    # Question 3
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]3. Figures Placement[/bold]\n"
             "Do you want all figures at the end of the document, after the references in a separate section?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["figures_end"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["figures_end"] = answer == "y"
 
-        # Question 4
-        console.print("\n")
-        console.print(Panel.fit(
+
+    if choices["figures_end"]:
+        console.print("[bold red]ERROR:[/bold red] Figures in the end not implemented yet", style="red")            
+        console.log("[ERROR] Figures in the end  not implemented yet", style="red")
+
+        logger.info("Adding endfloat package")
+        content = add_endfloat_package(content)
+
+    
+
+    # Question 4
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]4. Separate Figures Document[/bold]\n"
             "Do you want all figures in a separate document that includes only your figures?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["figures_separate"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["figures_separate"] = answer == "y"
 
-        # Question 5
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 5
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]5. Figures Zip Archive[/bold]\n"
             "Do you want all figures in a zip file that includes all your figures?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["figures_zip"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["figures_zip"] = answer == "y"
 
-        # Question 6
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 6
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]6. Tables Placement[/bold]\n"
             "Do you want all tables at the end of the document, after the references in a separate section?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["tables_end"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["tables_end"] = answer == "y"
 
-        # Question 7
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 7
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]7. Tables Zip Archive[/bold]\n"
             "Do you want all tables in a zip file that includes all your tables in pdf format?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["tables_zip"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["tables_zip"] = answer == "y"
 
-        # Question 8
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 8
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]8. Remove Headers/Footers[/bold]\n"
             "Do you want to remove all headers, footers and page numbers (it helps for converting to the MS Word format)?",
             border_style="blue"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["remove_headers"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["remove_headers"] = answer == "y"
 
-        # Question 9
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 9
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]9. Flatten LaTeX Files[/bold]\n"
             "Do you want to 'flatten' your LaTeX source files by including all the \\input and \\include files into the main-file.tex root file?",
             border_style="yellow"
         ))
-        console.print("[italic yellow]Note: Requires https://pypi.org/project/latex-flatten/[/italic yellow]")
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["flatten_latex"] = answer == "y"
+    # console.print("[italic yellow]Note: Requires https://pypi.org/project/latex-flatten/[/italic yellow]")
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["flatten_latex"] = answer == "y"
 
-        # Question 10
-        console.print("\n")
-        console.print(Panel.fit(
+
+    if choices["flatten_latex"]:
+
+        console.print("[bold green]ACTION:[/bold green] Let flatten the file. Where we find \input and \include we add the actual file contents", style="green")                
+        logger.info("Flattening the files:")
+
+        flatten_tex_main_file(input_file, output_file)
+        
+
+    
+
+
+    # Question 10
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]10. Remove Comments[/bold]\n"
             "Do you want to remove all the % commented lines?",
             border_style="yellow"
         ))
-        console.print("[italic yellow]Note: Requires arxiv-latex-cleaner[/italic yellow]")
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["remove_comments"] = answer == "y"
+    console.print("[italic yellow]Note: Requires arxiv-latex-cleaner[/italic yellow]")
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["remove_comments"] = answer == "y"
 
-        # Question 11
-        console.print("\n")
-        console.print(Panel.fit(
+    # Question 11
+    console.print("\n")
+    console.print(Panel.fit(
             "[bold]11. Convert to Microsoft Word[/bold]\n"
             "Do you want to convert to the proprietary, expensive and non-interoperable Microsoft Word format?",
             border_style="red"
         ))
-        answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
-        choices["convert_to_word"] = answer == "y"
+    answer = Prompt.ask("Your choice", choices=["y", "n", "Y", "N"], default="n").lower()
+    choices["convert_to_word"] = answer == "y"
 
-        # Display summary
-        console.print("\n" + "=" * 60)
-        console.print("[bold green]📋 Formatting Options Summary[/bold green]\n")
-    ask_and_process_sequentially()
+    # Display summary
+    console.print("\n" + "=" * 60)
+    console.print("[bold green]📋 Formatting Options Summary[/bold green]\n")
 
-    #logger.info("Adding endfloat package")
-    #content = add_endfloat_package(content)
 
-    #logger.info("Adding endnotes package")
-    #content = add_endnotes_package(content)
-
-    #logger.info("Transforming footnotes to endnotes")
-    #content = transform_footnotes_to_endnotes(content)
-
+    
     #logger.info("Removing page numbers, headers, and footers")
     #content = remove_page_numbers_headers_footers(content)
 
