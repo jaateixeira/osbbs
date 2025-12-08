@@ -25,6 +25,7 @@ def flatten_tex_main_file(main_file_path: str, output_path: str = None) -> str:
     Returns:
         Flattened LaTeX content as string if output_path is None, else writes to file
     """
+    console.print(f"Flattening a LaTeX main {main_file_path=} {output_path=}")
 
     def process_file(file_path, processed_files):
         """Recursive helper to process files and track included files"""
